@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title><%=title%></title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+	</head>
+	<body>
+
+
+<div id="masthead">  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h1>Welcome Admin
+          <p class="lead"></p>
+        </h1>
+      </div>
+ 
+    </div> 
+  </div> 
+  
+  <div class="container">
+    <div class="row">
+
+    </div> 
+  </div><!-- /cont -->
+  
+</div>
+
+
+<div class="container">
+  <div class="row">
+
+    <% if(error != "") { %>
+      <div class="col-md-12"> 
+        <div class="alert alert-danger" role="alert">    
+          <strong> <%=error%> </strong>
+        </div>
+       <% }  %>
+    
+    <div class="col-md-12"> 
+      
+      <div class="panel-form">
+        <div class="panel-body">
+                   
+          <!--Books-->
+          <div class="container-fluid">
+  
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-12"></div>
+              
+               
+                
+                  <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="form-body">
+            <!-- <h1> Welcome Admin!</h1> <br> -->
+              <form method="post" action="/adminlogin/adminValidate" onsubmit="return formValidate()" >
+
+                <!-- <div class="form-group">
+                    <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" name="email" id="email">
+                        <label for="error" id="error"></label>
+                      
+                  </div>
+                  <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" name="password" id="password"><br>
+                    <span id="message" style="color:red;"></span><br> 
+                  </div>
+                   -->
+                  
+                  <label> Email/Username:</label><br>
+                  <input type="text" id="email" placeholder="Enter your Username.." class="form-control" name="email"> 
+                   <span id="err_email"></span> <br>
+                  <label> Password:</label><br>
+                  <input type="password" id="password" placeholder="Enter your password.." required class="form-control" name="password">
+                  <span id="err_pass"></span> <br><br>
+                  <!-- <input type="submit" value="SIGN IN" class="btn btn-dark"> -->
+              <hr>
+              <button id="btn" type="submit" class="btn btn-warning btn-block">Log In</button><br>
+              <!-- <small>  <a href="/userlogin">Sign In as User</a> </small> -->
+            </form>
+          </div>
+        </div>
+         
+    </div>
+     
+</div>
+          <!--/Books-->
+                                
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12">  </div>
+                                                                                       
+	                                                
+                                                      
+   	</div><!--/col-12-->
+  </div>
+</div>
+                                                
+                                                                                
+<hr>
+
+
+	<!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+       function formValidate(){
+
+        let email=document.getElementById("email").value;
+        let emailerr=document.getElementById("err_email");
+        let pass=document.getElementById("password");
+        let passerr=document.getElementById("err_pass");
+        //let emailCheck= /^([a-zA-Z0-9\._]{1,30})@([a-zA-Z0-9\-]{1,20}).([A-Za-z]{2,6})?.([a-zA-Z]{2,5})/;
+        let flag=1;
+
+        
+        // if(!emailCheck.test(email)){
+        //   emailerr.innerHTML=" **Invalid Format";
+        //   flag=0;
+        // }
+        if (pass.value.trim() ===""){
+          passerr.innerHTML=" **Field cannot be empty";
+          flag=0;
+        }
+
+        if(flag==1)
+        {
+          return true;
+        }
+        else return false;
+       }
+
+    </script>
+	</body>
+</html>
